@@ -4,63 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="../dist/main.css">
-	<style>
-		body{
-			padding: 0;
-			margin: 0;
-		}
-		#body{
-			display: flex;
-			flex-direction: column;
-			width: 100vw;
-			height: 100vh;
-		}
-		#header{
-			width: 100%;
-			height: 100px;
-		}
-		#content{
-			width: 100%;
-			display: flex;
-			flex-direction: row;
-			flex-grow: 3;
-			background-color: grey;
-		}
-		#left{
-			width: 200px;
-			background-color: orange;
-			display: flex;
-			flex-direction: column;
-		}
-		#areaTree{
-			height: 300px;
-			overflow: auto;
-			background-color: red;
-		}
-		#riverList{
-			overflow: auto;
-			background-color: pink;
-			flex-grow: 1;
-		}
-		#center{
-			flex-grow: 5;
-			background-color: aqua;
-		}
-		#map{
-			width: 100%;
-			height: 100%;
-			background-color: black;
-		}
-		#right{
-			flex-grow:2;
-			background-color: linen;
-		}
-		#footer{
-			width: 100%;
-			flex-grow:2;
-			background-color: lightblue;
-		}
-	</style>
+	<link rel="stylesheet" href="./style.css">
 </head>
 	<body>
 		<div id="body">
@@ -76,29 +20,29 @@
 			  <div class="tab-content">
 			    <div role="tabpanel" class="tab-pane active" id="home">
 			    	<div class="btn-group" role="group" aria-label="...">
-						  <button type="button" class="btn btn-default">基本情况</button>
-						  <button type="button" class="btn btn-default">调查记录</button>
+						  <button type="button" class="btn btn-default headerBtn" id="baseSituationBtn"><span>基本情况</span></button>
+						  <button type="button" class="btn btn-default" id="searchRecord"><span>调查记录</span></button>
 						</div>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="profile">
 			    	<div class="btn-group" role="group" aria-label="...">
-						  <button type="button" class="btn btn-default">政区汇总</button>
-						  <button type="button" class="btn btn-default">河流汇总</button>
+						  <button type="button" class="btn btn-default headerBtn"><span>政区汇总</span></button>
+						  <button type="button" class="btn btn-default headerBtn"><span>河流汇总</span></button>
 						</div>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="messages">
 			    	<div class="btn-group" role="group" aria-label="...">
-						  <button type="button" class="btn btn-default">SHP导出</button>
-						  <button type="button" class="btn btn-default">整条河流</button>
+						  <button type="button" class="btn btn-default headerBtn"><span>SHP导出</span></button>
+						  <button type="button" class="btn btn-default headerBtn"><span>整条河流</span></button>
 						</div>
 			    </div>
 			    <div role="tabpanel" class="tab-pane" id="settings">
 			    	<div class="btn-group" role="group" aria-label="...">
-						  <button type="button" class="btn btn-default">区划管理</button>
-						  <button type="button" class="btn btn-default">河流管理</button>
-						  <button type="button" class="btn btn-default">信息修改</button>
-						  <button type="button" class="btn btn-default">用户管理</button>
-						  <button type="button" class="btn btn-default">系统设置</button>
+						  <button type="button" class="btn btn-default headerBtn"><span>区划管理</span></button>
+						  <button type="button" class="btn btn-default headerBtn"><span>河流管理</span></button>
+						  <button type="button" class="btn btn-default headerBtn"><span>信息修改</span></button>
+						  <button type="button" class="btn btn-default headerBtn"><span>用户管理</span></button>
+						  <button type="button" class="btn btn-default headerBtn"><span>系统设置</span></button>
 						</div>
 			    </div>
 			  </div>

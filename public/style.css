@@ -1,0 +1,76 @@
+body{
+	padding: 0;
+	margin: 0;
+}
+/*修改bootstrap样式*/
+.nav>li>a{
+	padding:3px 15px;
+}
+/******end********/
+#body{
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+}
+#header{
+	width: 100%;
+	height: 110px;
+}
+#content{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-grow: 3;
+	background-color: grey;
+}
+#left{
+	width: 200px;
+	background-color: orange;
+	display: flex;
+	flex-direction: column;
+}
+#areaTree{
+	height: 300px;
+	overflow: auto;
+	background-color: red;
+}
+#riverList{
+	overflow: auto;
+	background-color: pink;
+	flex-grow: 1;
+}
+#center{
+	flex-grow: 5;
+	background-color: aqua;
+}
+#map{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+}
+#right{
+	flex-grow:2;
+	background-color: linen;
+}
+#footer{
+	width: 100%;
+	flex-grow:2;
+	background-color: lightblue;
+}
+.headerBtn{
+	height: 65px;
+	width:100px;
+	
+}
+.headerBtn>span{
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	display: inline-block;
+	right: 0;
+}
+#baseSituationBtn{
+	background-image: url('../img/Koala.jpg');
+	background-size: 100% 100%;
+}
