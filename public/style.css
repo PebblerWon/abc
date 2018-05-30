@@ -49,6 +49,10 @@ body{
 	height: 100%;
 	background-color: black;
 }
+#map>#map_root{
+	width:100% !important;
+	height: 100% !important;
+}
 #right{
 	flex-grow:2;
 	background-color: linen;
@@ -59,9 +63,9 @@ body{
 	background-color: lightblue;
 }
 .headerBtn{
-	height: 65px;
-	width:100px;
-	
+	height: 60px;
+	width:60px;
+	margin:0px 5px;
 }
 .headerBtn>span{
 	position: absolute;
@@ -70,7 +74,47 @@ body{
 	display: inline-block;
 	right: 0;
 }
-#baseSituationBtn{
-	background-image: url('../img/Koala.jpg');
+#jiBen_qk{
+	background-image: url('../img/jiBen_qk.png');
+	background-size: 100% 100%;
+}
+#diaoCha_jl{
+	background-image: url('../img/diaoCha_jl.png');
+	background-size: 100% 100%;
+}
+#zhengqu_hz{
+	background-image: url('../img/zhengqu_hz.png');
+	background-size: 100% 100%;
+}
+#heLiu_hz{
+	background-image: url('../img/zhengqu_hz.png');
+	background-size: 100% 100%;
+}
+#shp_dc{
+	background-image: url('../img/shp_dc.png');
+	background-size: 100% 100%;
+}
+#zhengTiao_hl{
+	background-image: url('../img/zhengTiao_hl.jpg');
+	background-size: 100% 100%;
+}
+#quHua_gl{
+	background-image: url('../img/quHua_gl.png');
+	background-size: 100% 100%;
+}
+#heLiu_gl{
+	background-image: url('../img/heLiu_gl.png');
+	background-size: 100% 100%;
+}
+#xinXi_xg{
+	background-image: url('../img/xinXi_xg.png');
+	background-size: 100% 100%;
+}
+#yongHu_gl{
+	background-image: url('../img/yongHu_gl.png');
+	background-size: 100% 100%;
+}
+#xiTong_sz{
+	background-image: url('../img/xiTong_sz.png');
 	background-size: 100% 100%;
 }
