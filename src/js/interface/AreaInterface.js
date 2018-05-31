@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import {Host} from '../util/config'
 const interFaceName = "AreaInterface.asmx"
 

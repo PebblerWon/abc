@@ -11,8 +11,6 @@ const DeleteUserUrl = Host + interFaceName + '/DeleteUser'
 
 	
 function UserIsLogin( UserName,  PassWord){
-	console.log(UserName)
-	console.log(PassWord)
 	return new Promise(function(resolve,reject){
 		$.ajax({
 			method:'post',

@@ -2,9 +2,29 @@ body{
 	padding: 0;
 	margin: 0;
 }
+#loading{
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-color: #333;
+	opacity: 0.7;
+	z-index: 31;/*arcgis工具条的index为30*/
+}
+#loading>img{
+	opacity: 1;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
 /*修改bootstrap样式*/
+.tab-content{
+	padding:5px 5px;
+}
 .nav>li>a{
 	padding:3px 15px;
+}
+.fixed-table-container tbody .selected td{
+	background-color: #428bca;
 }
 /******end********/
 #body{
@@ -15,30 +35,31 @@ body{
 }
 #header{
 	width: 100%;
-	height: 110px;
+	height: 120px;
 }
 #content{
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	flex-grow: 3;
-	background-color: grey;
 }
 #left{
 	width: 200px;
-	background-color: orange;
 	display: flex;
 	flex-direction: column;
 }
 #areaTree{
 	height: 300px;
 	overflow: auto;
-	background-color: red;
+	border-bottom: 3px solid blue;
 }
 #riverList{
 	overflow: auto;
-	background-color: pink;
 	flex-grow: 1;
+	max-height: 300px;
+}
+#riverList>table{
+	text-align: center;
 }
 #center{
 	flex-grow: 5;
@@ -56,65 +77,59 @@ body{
 #right{
 	flex-grow:2;
 	background-color: linen;
+	display: none;
 }
 #footer{
 	width: 100%;
 	flex-grow:2;
 	background-color: lightblue;
+	display: none;
 }
 .headerBtn{
-	height: 60px;
-	width:60px;
+	height: 80px;
+	width:70px;
 	margin:0px 5px;
+	background-size: 60px 60px;
+	background-position: 2px 0px;
+	background-repeat: no-repeat;
 }
 .headerBtn>span{
-	position: absolute;
-	top: 100%;
-	width: 100%;
 	display: inline-block;
-	right: 0;
+	position: relative;
+	top: 30px;
+	left: -8px;
+	text-align: center;
 }
 #jiBen_qk{
 	background-image: url('../img/jiBen_qk.png');
-	background-size: 100% 100%;
 }
 #diaoCha_jl{
 	background-image: url('../img/diaoCha_jl.png');
-	background-size: 100% 100%;
 }
 #zhengqu_hz{
 	background-image: url('../img/zhengqu_hz.png');
-	background-size: 100% 100%;
 }
 #heLiu_hz{
 	background-image: url('../img/zhengqu_hz.png');
-	background-size: 100% 100%;
 }
 #shp_dc{
 	background-image: url('../img/shp_dc.png');
-	background-size: 100% 100%;
 }
 #zhengTiao_hl{
 	background-image: url('../img/zhengTiao_hl.jpg');
-	background-size: 100% 100%;
 }
 #quHua_gl{
 	background-image: url('../img/quHua_gl.png');
-	background-size: 100% 100%;
 }
 #heLiu_gl{
 	background-image: url('../img/heLiu_gl.png');
-	background-size: 100% 100%;
 }
 #xinXi_xg{
 	background-image: url('../img/xinXi_xg.png');
-	background-size: 100% 100%;
 }
 #yongHu_gl{
 	background-image: url('../img/yongHu_gl.png');
-	background-size: 100% 100%;
 }
 #xiTong_sz{
 	background-image: url('../img/xiTong_sz.png');
-	background-size: 100% 100%;
 }
