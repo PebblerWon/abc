@@ -1,3 +1,5 @@
+import clickHandle from './clickHandle'
+
 let E =  $('#riverListTable')
 
 async function init(){
@@ -15,8 +17,13 @@ async function init(){
 	    }],
 	    formatNoMatches:()=>"无河流",
 	    clickToSelect:true,
-	    onClickRow:(e)=>{
-	    	console.log(e)
+	    onClickCell:(field, value, row)=>{
+	    	//bootstrapTable没有点击后事件，所以将
+	    	//点击后事件放在定时器中执行
+	    	setTimeout(
+	    		()=>{clickHandle()},
+	    		0
+	    	)
 	    }
 	});
 }
@@ -30,5 +37,5 @@ function getSelections(){
 	return E.bootstrapTable('getSelections')
 }
 export default{
-	init,load
+	init,load,getSelections
 }

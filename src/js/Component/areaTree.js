@@ -1,6 +1,7 @@
 import {GetAreaTree} from '../interface/AreaInterface'
 import {GetRiverListByRegionCode} from '../interface/RiverInterface'
 import riverList from './riverList'
+import clickHandle from './clickHandle'
 
 let E = $('#areaTree')
 
@@ -17,6 +18,8 @@ async function init(){
 	*	根据选择的政区代码获取河流列表
 	*/
 	E.on('nodeSelected' , (e,data)=>{
+		clickHandle()
+		
 		console.log(e)
 		let regionCode = data.tag
 		GetRiverListByRegionCode(regionCode).then((res)=>{
