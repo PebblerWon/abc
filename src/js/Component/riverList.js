@@ -29,7 +29,7 @@ async function init(){
 }
 
 function load(data){
-	console.log(data)
+	/*console.log(data)*/
 	E.bootstrapTable('load',data)
 }
 

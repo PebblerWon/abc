@@ -13,6 +13,7 @@ module.exports ={
 function dispose(){
 	thisBtn.removeClass('btn-primary')
 	thisBtn.addClass('btn-default')
+	R.empty()
 	R.hide()
 }
 

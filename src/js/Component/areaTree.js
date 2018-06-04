@@ -20,22 +20,25 @@ async function init(){
 	E.on('nodeSelected' , (e,data)=>{
 		clickHandle()
 		
-		console.log(e)
 		let regionCode = data.tag
-		GetRiverListByRegionCode(regionCode).then((res)=>{
-			let data = []
 
-			res.forEach(item=>{
-				data.push({
-					riverCode:item.RiverCode,
-					riverName:item.RiverNam
+		/*只有最下级节点的点击事件才出发刷新河流列表*/
+		if(!data.nodes){
+			GetRiverListByRegionCode(regionCode).then((res)=>{
+				let data = []
+
+				res.forEach(item=>{
+					data.push({
+						riverCode:item.RiverCode,
+						riverName:item.RiverNam
+					})
 				})
+
+				riverList.load(data)
 			})
-
-			riverList.load(data)
-		})
-
-		console.log(getSelected())
+		}
+		
+		
 	})
 }
 

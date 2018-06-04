@@ -18,7 +18,8 @@ import riverList from './js/Component/riverList'
 var _ = window.app = {
 	map:undefined,
 	currentTool:undefined,
-	loading:0
+	loading:0,
+	user:undefined
 }
 
 async function main(){
@@ -28,7 +29,7 @@ async function main(){
 
    
 	/**/
-	let userInfo = await UserIsLogin("admin","123456")
+	_.user = await UserIsLogin("admin","123456")
 	//console.log(userInfo)
 	/**/
 

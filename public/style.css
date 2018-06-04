@@ -49,7 +49,7 @@ body{
 	flex-direction: column;
 }
 #areaTree{
-	height: 300px;
+	height: 250px;
 	overflow: auto;
 	border-bottom: 3px solid blue;
 }
@@ -98,9 +98,15 @@ body{
 }
 #footer{
 	width: 100%;
-	flex-grow:2;
-	background-color: lightblue;
-	display: none;
+	flex-grow:3;
+	border-top: 3px solid blue;
+	/* display: none; */
+}
+#footer .nav>li>a{
+	padding:3px 5px;
+}
+#footer #detailInfoBtnGroup .btn{
+	padding: 1px 6px;
 }
 .headerBtn{
 	height: 80px;
