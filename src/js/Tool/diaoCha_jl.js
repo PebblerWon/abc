@@ -17,6 +17,7 @@ function dispose(){
 	thisBtn.addClass('btn-default')
 	R.empty()
 	R.hide()
+	detailInfo.dispose()
 }
 
 //该工具的注册方法

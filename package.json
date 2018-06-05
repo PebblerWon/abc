@@ -23,6 +23,7 @@
     "esri-loader": "^2.3.0",
     "file-loader": "^1.1.11",
     "jquery": "^3.3.1",
+    "jquery-viewer": "^1.0.0",
     "mini-css-extract-plugin": "^0.4.0",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",

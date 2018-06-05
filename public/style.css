@@ -100,13 +100,17 @@ body{
 	width: 100%;
 	flex-grow:3;
 	border-top: 3px solid blue;
-	/* display: none; */
+	display: none;
 }
 #footer .nav>li>a{
 	padding:3px 5px;
 }
 #footer #detailInfoBtnGroup .btn{
 	padding: 1px 6px;
+}
+#detailInfoTable th .th-inner,
+#detailInfoTable td{
+	padding: 2px;
 }
 .headerBtn{
 	height: 80px;

@@ -3254,6 +3254,10 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
+jquery-viewer@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/jquery-viewer/download/jquery-viewer-1.0.0.tgz#84dc26d39b4499d8f21fa146d35bd52f5f813f11"
+
 jquery@^3.3.1:
   version "3.3.1"
   resolved "http://registry.npm.taobao.org/jquery/download/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
