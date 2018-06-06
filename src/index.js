@@ -68,6 +68,7 @@ async function main(){
    
 	/**/
 	_.user = await UserIsLogin("admin","123456")
+	console.log(_.user)
 	//console.log(userInfo)
 	/**/
 
@@ -145,10 +146,10 @@ function initMap(){
 		    "esri/geometry/Point",
 		    "esri/geometry/Polyline",
 		    "esri/geometry/Polygon",
-		    "esri/symbol/PictureMarkerSymbol",
-		    "esri/symbol/CartographicLineSymbol",
-		    "esri/symbol/SimpleFillSymbol",
-		    "esri/Graphic",
+		    "esri/symbols/PictureMarkerSymbol",
+		    "esri/symbols/CartographicLineSymbol",
+		    "esri/symbols/SimpleFillSymbol",
+		    "esri/graphic",
 	    ], 
 	    {url:GiSApiUrl}
 	)
@@ -189,9 +190,9 @@ function initMap(){
 
 	        /*添加16类要素图层*/
 	        for(let item of _.features){
-	        	$.ajax({
+	        	/*$.ajax({
 			        type: "GET",
-			        url: `Host/${item.id}Interface.asmx/GetList`,
+			        url: `${Host}/${item.id}Interface.asmx/GetList`,
 			        dataType: "json",
 			        success: function (data) {
 			        	let newGlayer = new GraphicsLayer({id:item.id})
@@ -225,9 +226,9 @@ function initMap(){
 	                        console.log(geometryType);
 	                    })
 
-	                    _.map.addLayer(graphicLayerIntake);
+	                    _.map.addLayer(newGlayer);
 			        }
-			    });
+			    });*/
 	        	
 	        }
 	        
@@ -260,8 +261,8 @@ function initMap(){
 			    let xx, yy;
 			    xx = coorArr[0].split(",")[0];
 			    yy = coorArr[0].split(",")[1];
-			    xx1 = coorArr[length - 1].split(",")[0];
-			    yy1 = coorArr[length - 1].split(",")[1];
+			    let xx1 = coorArr[length - 1].split(",")[0];
+			    let yy1 = coorArr[length - 1].split(",")[1];
 			    //Attribute参数  
 			    let attr = {
 			        "name": name,

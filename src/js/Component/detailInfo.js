@@ -31,11 +31,22 @@ async function init(ds){
 	})
 
 	$("#footer a:first").tab('show')
+
+	let tableName = getCurrentTarget()['id']
+	let zqdm = areaTree.getSelected()[0]['tag']
+	let riverCode = riverList.getSelections()[0]['riverCode']
+	let searchEr = ds.searchEr
+	let searchTime = ds.searchTime
+	GetDataBySurveyRecord(tableName,zqdm,riverCode,searchEr,searchTime)
+	.then((data)=>{
+		fetchData(JSON.parse(data).data)
+	})
 }
 
 function dispose(){
 	/*取消事件绑定*/
 	$(`#footer a[data-toggle="tab"]`).off('shown.bs.tab')
+	TABLE.bootstrapTable('destroy')
 	F.hide()
 }
 
@@ -49,7 +60,7 @@ function showTab(id){
 }
 
 function getCurrentTarget(){
-	return $(`#footer li.active`)
+	return $(`#footer li.active>a`)[0]
 }
 
 function fetchData(data){
@@ -99,21 +110,27 @@ function fetchData(data){
 		    	let Dom = document.getElementById('imageViewer')
 		    	if(field=="图片"){
 		    		let imageUrl = row['图片路径']
-		    		let $ul = $(`#imageViewer`)
-		    		$ul.empty()
-		    		let imgs = imageUrl.split(',')
-		    		for(let item of imgs){
-		    			let $li = $(`<li><img src="${imageRootUrl+item}" /></li>`)
-		    			$ul.append($li)
-		    		}
+		    		
+		    		if(imageUrl!=""){
+		    			let $ul = $(`#imageViewer`)
+		    			$ul.empty()
+		    			let imgs = imageUrl.split(',')
+		    			for(let item of imgs){
+			    			let $li = $(`<li><img src="${imageRootUrl+item}" /></li>`)
+			    			$ul.append($li)
+			    		}
 
-			    	let viw = new Viewer(Dom).show()
+				    	let viw = new Viewer(Dom).show()
 
-			    	Dom.addEventListener('hidden', function () {
-					  viw.destroy()
-					  // -> true
-					}, false);
-		    	}
+				    	Dom.addEventListener('hidden', function () {
+						  viw.destroy()
+						  // -> true
+						}, false);
+				    }else{
+				    	alert("无图片")
+			    		
+			    	}
+			    }
 		    	
 		    }
 		})	
