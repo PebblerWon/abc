@@ -14,6 +14,7 @@ import {GiSApiUrl,TDTUrl,TileInfoObj} from './js/util/mapConfig'
 import {UserIsLogin} from './js/interface/UserInterface'
 import areaTree from './js/Component/areaTree'
 import riverList from './js/Component/riverList'
+import featureCheckBox from './js/Component/featureCheckBox'
 import {Host} from './js/util/config.js'
 
 
@@ -45,6 +46,8 @@ var _ = window.app = {
 function initComponent(){
 	/*添加底部标签页组件*/
 	let $tabUl = $("#footer ul")
+	/*添加复选框*/
+	
 	for(let item of window.app.features){
 		let newItem = $(`
 			<li role="presentation" >
@@ -53,6 +56,8 @@ function initComponent(){
 		)
 		$tabUl.append(newItem) 
 	}
+
+	featureCheckBox.init()
 }
 
 
@@ -67,7 +72,8 @@ async function main(){
 
    
 	/**/
-	_.user = await UserIsLogin("admin","123456")
+	let loginData = await UserIsLogin("admin","123456")
+	_.user = JSON.parse(loginData).data
 	console.log(_.user)
 	//console.log(userInfo)
 	/**/
@@ -190,10 +196,13 @@ function initMap(){
 
 	        /*添加16类要素图层*/
 	        for(let item of _.features){
-	        	/*$.ajax({
-			        type: "GET",
-			        url: `${Host}/${item.id}Interface.asmx/GetList`,
+	        	$.ajax({
+			        type: "post",
+			        url: `${Host}${item.id}Interface.asmx/GetListByUserName`,
 			        dataType: "json",
+			        data:{
+			        	userName:_.user.userName
+			        },
 			        success: function (data) {
 			        	let newGlayer = new GraphicsLayer({id:item.id})
 
@@ -228,7 +237,7 @@ function initMap(){
 
 	                    _.map.addLayer(newGlayer);
 			        }
-			    });*/
+			    });
 	        	
 	        }
 	        
